@@ -1,7 +1,6 @@
 # Exercise-1.12-PPO-Implementation-for-MountainCar-v0
 
 - 使用 PPO (Actor-Critic) 完整訓練流程
-- 不需安裝 tensorboardX 或使用 SummaryWriter
 - 相容 Gym (<=0.25) 與 Gymnasium / Gym (>=0.26)，已處理 reset()/step() 回傳格式差異
 - 直接以終端機輸出 episode steps 與 return
 
@@ -52,17 +51,6 @@ L_critic = mean( (V(s_t) - G_t)^2 )
 - Mini-batch 更新：將 rollout 資料切成小 batch 更新
 - Multiple epochs：同一批資料重複更新多次以提升 sample efficiency
 - Gradient clipping：限制梯度範數避免梯度爆炸
-
-## 執行方式
-1) 安裝套件
-如果使用 gym：
-pip install gym torch numpy
-
-如果使用 gymnasium：
-pip install gymnasium torch numpy
-
-2) 執行訓練
-python PPO_MountainCar-v0_noTB.py
 
 ## 輸出與觀察方式
 程式會定期印出 episode number、steps、return 等資訊。MountainCar-v0 通常每步 reward 為 -1，因此：
